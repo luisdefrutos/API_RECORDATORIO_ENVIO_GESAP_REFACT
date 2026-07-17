@@ -1,0 +1,62 @@
+################################################## ERROR ##################################################
+11:57:45 [API][ERROR] [CorrID: 713DEF1A] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR POST - Fallo al enviar correo tras guardado exitoso: El servidor SMTP requiere una conexión segura o el cliente no se autenticó. La respuesta del servidor fue: 5.7.0 Must issue a STARTTLS command first
+EXCEPTION: El servidor SMTP requiere una conexión segura o el cliente no se autenticó. La respuesta del servidor fue: 5.7.0 Must issue a STARTTLS command first
+STACKTRACE:
+   en System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   en System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   en RecordatorioEnvio.Infrastructure.Services.EmailNotificationService.<EnviarEmailAsync>d__3.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Infrastructure\Services\EmailNotificationService.cs:línea 105
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en RecordatorioEnvio.Infrastructure.Services.EmailNotificationService.<SendRecordatorioAcceptedEmailAsync>d__2.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Infrastructure\Services\EmailNotificationService.cs:línea 46
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en RecordatorioEnvio.API.Controllers.RecordatorioController.<Post>d__8.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.API\Controllers\RecordatorioController.cs:línea 170
+##################################################
+
+################################################## ERROR ##################################################
+12:02:11 [API][ERROR] [CorrID: 206500EC] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR Fallo SmtpClient. Host: sesmade77006.tuv-sud.es:587, SSL: False, From: no-reply.es@tuvsud.com, To: luis.defrutos@tuvsud.com: El servidor SMTP requiere una conexión segura o el cliente no se autenticó. La respuesta del servidor fue: 5.7.0 Must issue a STARTTLS command first
+EXCEPTION: El servidor SMTP requiere una conexión segura o el cliente no se autenticó. La respuesta del servidor fue: 5.7.0 Must issue a STARTTLS command first
+STACKTRACE:
+   en System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   en System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   en RecordatorioEnvio.Infrastructure.Services.EmailNotificationService.<EnviarEmailAsync>d__3.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Infrastructure\Services\EmailNotificationService.cs:línea 108
+##################################################
+
+################################################## ERROR ##################################################
+12:02:45 [API][ERROR] [CorrID: 206500EC] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR POST - Fallo al enviar correo tras guardado exitoso: El servidor SMTP requiere una conexión segura o el cliente no se autenticó. La respuesta del servidor fue: 5.7.0 Must issue a STARTTLS command first
+EXCEPTION: El servidor SMTP requiere una conexión segura o el cliente no se autenticó. La respuesta del servidor fue: 5.7.0 Must issue a STARTTLS command first
+STACKTRACE:
+   en System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   en System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   en RecordatorioEnvio.Infrastructure.Services.EmailNotificationService.<EnviarEmailAsync>d__3.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Infrastructure\Services\EmailNotificationService.cs:línea 114
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en RecordatorioEnvio.Infrastructure.Services.EmailNotificationService.<SendRecordatorioAcceptedEmailAsync>d__2.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Infrastructure\Services\EmailNotificationService.cs:línea 46
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en RecordatorioEnvio.API.Controllers.RecordatorioController.<Post>d__8.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.API\Controllers\RecordatorioController.cs:línea 170
+##################################################
+

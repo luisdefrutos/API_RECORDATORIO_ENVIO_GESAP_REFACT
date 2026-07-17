@@ -1,0 +1,70 @@
+################################################## ERROR ##################################################
+09:09:28 [API][ERROR] [CorrID: 4A878109] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR POST - Validación: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+EXCEPTION: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+STACKTRACE:
+   en RecordatorioEnvio.Application.Services.RecordatorioService.Update(RecordatorioEnvioRespDto dto) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Application\Services\RecordatorioService.cs:línea 94
+   en RecordatorioEnvio.API.Controllers.RecordatorioController.<Post>d__8.MoveNext()
+##################################################
+
+################################################## ERROR ##################################################
+10:58:58 [API][ERROR] [CorrID: 2DE8261D] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR Fallo en transacción SaveAll (Rollback ejecutado): ORA-01745: nombre de variable del host/ligada no válido
+EXCEPTION: ORA-01745: nombre de variable del host/ligada no válido
+SQL      : SaveAll Transaction
+STACKTRACE:
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en RecordatorioEnvio.Infrastructure.Repositories.RecordatorioRepository.SaveAll(RecordatorioEnvioResp entity, IEnumerable`1 items, IEnumerable`1 notas) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Infrastructure\Repositories\RecordatorioRepository.cs:línea 378
+##################################################
+
+################################################## ERROR ##################################################
+10:58:59 [API][ERROR] [CorrID: 2DE8261D] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR POST - Excepción General: ORA-01745: nombre de variable del host/ligada no válido
+EXCEPTION: ORA-01745: nombre de variable del host/ligada no válido
+STACKTRACE:
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en RecordatorioEnvio.Infrastructure.Repositories.RecordatorioRepository.SaveAll(RecordatorioEnvioResp entity, IEnumerable`1 items, IEnumerable`1 notas) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Infrastructure\Repositories\RecordatorioRepository.cs:línea 388
+   en RecordatorioEnvio.Application.Services.RecordatorioService.Update(RecordatorioEnvioRespDto dto) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Application\Services\RecordatorioService.cs:línea 107
+   en RecordatorioEnvio.API.Controllers.RecordatorioController.<Post>d__8.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.API\Controllers\RecordatorioController.cs:línea 163
+##################################################
+
+################################################## ERROR ##################################################
+11:01:05 [API][ERROR] [CorrID: 62A75510] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR Fallo en transacción SaveAll (Rollback ejecutado): ORA-01745: nombre de variable del host/ligada no válido
+EXCEPTION: ORA-01745: nombre de variable del host/ligada no válido
+SQL      : SaveAll Transaction
+STACKTRACE:
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en RecordatorioEnvio.Infrastructure.Repositories.RecordatorioRepository.SaveAll(RecordatorioEnvioResp entity, IEnumerable`1 items, IEnumerable`1 notas) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Infrastructure\Repositories\RecordatorioRepository.cs:línea 378
+##################################################
+
+################################################## ERROR ##################################################
+11:02:45 [API][ERROR] [CorrID: 62A75510] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR Fallo en transacción SaveAll (Rollback ejecutado): ORA-01745: nombre de variable del host/ligada no válido
+EXCEPTION: ORA-01745: nombre de variable del host/ligada no válido
+SQL      : SaveAll Transaction
+STACKTRACE:
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en RecordatorioEnvio.Infrastructure.Repositories.RecordatorioRepository.SaveAll(RecordatorioEnvioResp entity, IEnumerable`1 items, IEnumerable`1 notas) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Infrastructure\Repositories\RecordatorioRepository.cs:línea 378
+##################################################
+
+################################################## ERROR ##################################################
+11:04:31 [API][ERROR] [CorrID: 62A75510] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR Fallo en transacción SaveAll (Rollback ejecutado): ORA-01745: nombre de variable del host/ligada no válido
+EXCEPTION: ORA-01745: nombre de variable del host/ligada no válido
+SQL      : SaveAll Transaction
+STACKTRACE:
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en RecordatorioEnvio.Infrastructure.Repositories.RecordatorioRepository.SaveAll(RecordatorioEnvioResp entity, IEnumerable`1 items, IEnumerable`1 notas) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Infrastructure\Repositories\RecordatorioRepository.cs:línea 378
+##################################################
+

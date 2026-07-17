@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <connectionStrings>
+    <!-- Rellena esta cadena con los datos de conexion reales y renombra este archivo a App.config (App.config ya esta en el svn ignore) -->
+    <add name="OracleDbContext" connectionString="Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=YOUR_HOST_HERE)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=YOUR_SERVICE_HERE)));User Id=YOUR_USER_HERE;Password=YOUR_PASSWORD_HERE;" providerName="Oracle.ManagedDataAccess.Client" />
+  </connectionStrings>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+  </startup>
+</configuration>

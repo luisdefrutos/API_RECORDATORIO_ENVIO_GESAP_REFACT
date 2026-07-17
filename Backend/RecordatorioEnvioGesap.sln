@@ -1,0 +1,55 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37012.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordatorioEnvio.Domain", "src\RecordatorioEnvio.Domain\RecordatorioEnvio.Domain.csproj", "{11111111-2222-3333-4444-555555555555}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordatorioEnvio.Application", "src\RecordatorioEnvio.Application\RecordatorioEnvio.Application.csproj", "{33333333-4444-5555-6666-777777777777}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordatorioEnvio.Infrastructure", "src\RecordatorioEnvio.Infrastructure\RecordatorioEnvio.Infrastructure.csproj", "{55555555-6666-7777-8888-999999999999}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordatorioEnvio.API", "src\RecordatorioEnvio.API\RecordatorioEnvio.API.csproj", "{AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordatorioEnvio.Tests.Unit", "src\RecordatorioEnvio.Tests.Unit\RecordatorioEnvio.Tests.Unit.csproj", "{CCCCCCCC-DDDD-EEEE-FFFF-000000000001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordatorioEnvio.Tests.Integration", "src\RecordatorioEnvio.Tests.Integration\RecordatorioEnvio.Tests.Integration.csproj", "{CCCCCCCC-DDDD-EEEE-FFFF-000000000002}"
+EndProject
+
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11111111-2222-3333-4444-555555555555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11111111-2222-3333-4444-555555555555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11111111-2222-3333-4444-555555555555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11111111-2222-3333-4444-555555555555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33333333-4444-5555-6666-777777777777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33333333-4444-5555-6666-777777777777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33333333-4444-5555-6666-777777777777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33333333-4444-5555-6666-777777777777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55555555-6666-7777-8888-999999999999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55555555-6666-7777-8888-999999999999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55555555-6666-7777-8888-999999999999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55555555-6666-7777-8888-999999999999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCCCCCCC-DDDD-EEEE-FFFF-000000000001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCCCCCCC-DDDD-EEEE-FFFF-000000000001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCCCCCCC-DDDD-EEEE-FFFF-000000000001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCCCCCCC-DDDD-EEEE-FFFF-000000000001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCCCCCCC-DDDD-EEEE-FFFF-000000000002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCCCCCCC-DDDD-EEEE-FFFF-000000000002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCCCCCCC-DDDD-EEEE-FFFF-000000000002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCCCCCCC-DDDD-EEEE-FFFF-000000000002}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3292103F-A773-4E50-B5C6-25B6C2920B0B}
+	EndGlobalSection
+EndGlobal

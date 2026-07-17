@@ -1,0 +1,1 @@
+12:54:32 [API][INFO] [IP: ::1] [ID: 8DE6AFFD] [URL: /api/recordatorio/23YPSVQo5_g4VGURehRXvmVqHji4R070shNQ_3X6gPIXLOq9ucI0F9TjrgicxOP82X7BSWGXQJMrvDJNhVSAPg==] RID: 1 | Acceso concedido a registro

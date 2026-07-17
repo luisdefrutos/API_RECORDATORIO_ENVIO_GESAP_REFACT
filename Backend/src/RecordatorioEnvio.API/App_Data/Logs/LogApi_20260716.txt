@@ -1,0 +1,63 @@
+################################################## ERROR ##################################################
+08:35:02 [API][ERROR] [CorrID: D0F22629] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR POST - Validación: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+EXCEPTION: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+STACKTRACE:
+   en RecordatorioEnvio.Application.Services.RecordatorioService.Update(RecordatorioEnvioRespDto dto) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Application\Services\RecordatorioService.cs:línea 97
+   en RecordatorioEnvio.API.Controllers.RecordatorioController.<Post>d__9.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.API\Controllers\RecordatorioController.cs:línea 194
+##################################################
+
+################################################## ERROR ##################################################
+10:58:31 [API][ERROR] [CorrID: FC88544A] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR POST - Validación: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+EXCEPTION: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+STACKTRACE:
+   en RecordatorioEnvio.Application.Services.RecordatorioService.Update(RecordatorioEnvioRespDto dto) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Application\Services\RecordatorioService.cs:línea 97
+   en RecordatorioEnvio.API.Controllers.RecordatorioController.<Post>d__9.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.API\Controllers\RecordatorioController.cs:línea 194
+##################################################
+
+################################################## ERROR ##################################################
+11:00:33 [API][ERROR] [CorrID: DDB04B25] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR POST - Validación: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+EXCEPTION: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+STACKTRACE:
+   en RecordatorioEnvio.Application.Services.RecordatorioService.Update(RecordatorioEnvioRespDto dto) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Application\Services\RecordatorioService.cs:línea 97
+   en RecordatorioEnvio.API.Controllers.RecordatorioController.<Post>d__9.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.API\Controllers\RecordatorioController.cs:línea 194
+##################################################
+
+################################################## ERROR ##################################################
+20:37:55 [API][ERROR] [CorrID: 6D68ED5B] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR POST - Validación: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+EXCEPTION: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+STACKTRACE:
+   en RecordatorioEnvio.Application.Services.RecordatorioService.Update(RecordatorioEnvioRespDto dto) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Application\Services\RecordatorioService.cs:línea 99
+   en RecordatorioEnvio.API.Controllers.RecordatorioController.<Post>d__9.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.API\Controllers\RecordatorioController.cs:línea 194
+##################################################
+
+################################################## ERROR ##################################################
+20:38:01 [API][ERROR] [CorrID: E22DDD65] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR POST - Validación: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+EXCEPTION: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+STACKTRACE:
+   en RecordatorioEnvio.Application.Services.RecordatorioService.Update(RecordatorioEnvioRespDto dto) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Application\Services\RecordatorioService.cs:línea 99
+   en RecordatorioEnvio.API.Controllers.RecordatorioController.<Post>d__9.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.API\Controllers\RecordatorioController.cs:línea 194
+##################################################
+
+################################################## ERROR ##################################################
+20:38:38 [API][ERROR] [CorrID: ABE9013B] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR POST - Validación: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+EXCEPTION: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+STACKTRACE:
+   en RecordatorioEnvio.Application.Services.RecordatorioService.Update(RecordatorioEnvioRespDto dto) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Application\Services\RecordatorioService.cs:línea 99
+   en RecordatorioEnvio.API.Controllers.RecordatorioController.<Post>d__9.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.API\Controllers\RecordatorioController.cs:línea 194
+##################################################
+
+################################################## ERROR ##################################################
+20:38:40 [API][ERROR] [CorrID: 7E788150] [IP: ::1] [Method: POST] [User: Anonymous] [URL: /api/recordatorio] [Agent: N/A]
+MENSAJE  : ERROR POST - Validación: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+EXCEPTION: Operación denegada: El expediente se encuentra en estado 2 y es inmutable.
+STACKTRACE:
+   en RecordatorioEnvio.Application.Services.RecordatorioService.Update(RecordatorioEnvioRespDto dto) en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.Application\Services\RecordatorioService.cs:línea 99
+   en RecordatorioEnvio.API.Controllers.RecordatorioController.<Post>d__9.MoveNext() en C:\Project\API_RECORDATORIO_ENVIO_GESAP\src\RecordatorioEnvio.API\Controllers\RecordatorioController.cs:línea 194
+##################################################
+

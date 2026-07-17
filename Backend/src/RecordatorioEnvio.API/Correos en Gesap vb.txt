@@ -1,0 +1,188 @@
+  
+
+
+Private Function EnviarEmailDT(ByVal EmailDT As String, ByVal lstCodActuacion As List(Of String)) As Integer
+
+        Dim ret As Integer = 0
+        Dim strAsunto As String = "GESAP - CERTIFICADOS DEP PENDIENTE FIRMA POR EL DIR. TÉCNICO"
+        Dim strCuerpoEmail As String = ""
+        Dim strTexto As String = ""
+
+        If lstCodActuacion.Count > 1 Then
+            strTexto = "se detallan las inspecciones de DEP que ya han sido firmadas por el inspector y están pendientes de su validación y firma."
+        Else
+            strTexto = "se detalla la inspección de DEP que ya ha sido firmada por el inspector y está pendiente de su validación y firma."
+        End If
+
+        strCuerpoEmail = "<p style='font-family:Arial, Helvetica, sans-serif; font-size:14px'>" &
+                              "A continuación, " & strTexto & "<br>" &
+                              "Tendrá que descargar el certificado y comprobar que los datos sean correctos.<br>" &
+                              "Si todo está OK tendrá que añadir la firma digital manualmente y subir el certificado a la aplicación.</p><br/>"
+
+        For Each oCodActuacion In lstCodActuacion
+            strCuerpoEmail += "<b>" + oCodActuacion & "</b><br/>"
+        Next
+
+        strCuerpoEmail += "<br/>" &
+                          "<img src='https://www.itv.tuv-sud.es/uploads/images/1489152254875322140448/ts-ts-vert-enes-rgb-cut_90x170.png'></img>" &
+                          "<br/>" &
+                          "<br/>Este mail es un mensaje automático.<i> POR FAVOR NO CONTESTE A ESTE EMAIL.</i>"
+
+        oFachada_GESAP.EnviarEmail_GESAP(oFachada_GESAP.SysConf.email_notificaciones_direccion, strAsunto, strCuerpoEmail, EmailDT, Nothing, True)
+
+        Return ret
+
+    End Function    
+Public Function EnviarEmail_GESAP(ByVal strEmail_Origen As String, _
+                           ByVal strAsunto As String, _
+                           ByVal strCuerpo As String, _
+                           ByVal strDestinatario As String, _
+                           ByVal lstRuta_Documento_Adjunto As List(Of String), _
+                           Optional ByVal blnCon_Copia_Oculta As Boolean = False) As Boolean
+
+
+        Dim strOrigen As String
+        Dim strCopia_Oculta As String
+        Dim strEmail_Respuesta As String
+        Dim ret As Boolean = False
+
+        If oSysConf IsNot Nothing Then
+
+            ' Si la base de datos no es real, cambiamos el destinatario al usuario de la aplicación
+            If Not Me.SysConf.EsTipoEntornoProduccion Then
+                strDestinatario = Me.EmpleadoSesion.email.ToString
+            End If
+
+            If IsNullOrWhiteSpace(strEmail_Origen) Then
+                strOrigen = oSysConf.email_notificaciones_direccion
+                strEmail_Respuesta = oSysConf.email_notificaciones_direccion
+            Else
+                strOrigen = strEmail_Origen
+                strEmail_Respuesta = strEmail_Origen
+            End If
+
+            If blnCon_Copia_Oculta AndAlso Not IsNullOrWhiteSpace(strEmail_Origen) Then
+                strCopia_Oculta = strEmail_Origen
+            Else
+                strCopia_Oculta = Nothing
+            End If
+
+            ret = Me.clienteEmail.Enviar(strOrigen, "Notificación " & Me.EmpresaSesion.nombre_comercial,
+                strEmail_Respuesta, Me.EmpresaSesion.nombre_comercial, strAsunto,
+                strCuerpo, strDestinatario, lstRuta_Documento_Adjunto,
+                strCopia_Oculta)
+
+        End If
+
+        Return ret
+
+    End Function
+
+  Public Function Enviar(ByVal email_origen As String, _
+                      ByVal nombre_origen As String, _
+                      ByVal email_respuesta As String, _
+                      ByVal nombre_respuesta As String, _
+                      ByVal asunto As String, _
+                      ByVal cuerpo As String, _
+                      ByVal email_destinatario As String, _
+                      ByVal ruta_documento_adjunto As List(Of String), _
+                      ByVal email_copia_oculta As String) As Boolean
+
+        Return EnviarEmail(Me.usuario, Me.password, Me.servidor, _
+                 Me.puerto, email_origen, nombre_origen, _
+                 email_respuesta, nombre_respuesta, _
+                 asunto, cuerpo, email_destinatario, _
+                 ruta_documento_adjunto, email_copia_oculta, _
+                 Me.habilitar_SSL)
+
+    End Function
+
+    Private Shared Function EnviarEmail(ByVal usuario As String,
+                            ByVal password As String,
+                            ByVal servidor As String,
+                            ByVal puerto As String,
+                            ByVal email_origen As String,
+                            ByVal nombre_origen As String,
+                            ByVal email_respuesta As String,
+                            ByVal nombre_respuesta As String,
+                            ByVal asunto As String,
+                            ByVal cuerpo As String,
+                            ByVal email_destinatario As String,
+                            ByVal ruta_documento_adjunto As List(Of String),
+                            ByVal email_copia_oculta As String,
+                            ByVal habilitar_SSL As Boolean) As Boolean
+
+        Dim ret As Boolean = False
+        Dim email As New System.Net.Mail.MailMessage()
+        Dim lstDestinatarios As List(Of String)
+
+        Try
+
+            If IsNullOrWhiteSpace(email_origen) OrElse
+                    IsNullOrWhiteSpace(email_respuesta) OrElse
+                    IsNullOrWhiteSpace(email_destinatario) Then
+                Throw New Exception("Parámetros origen, respuesta o destinatario vacíos")
+            End If
+            'para que el último ; no lo considere un elemento
+            lstDestinatarios = New List(Of String)(email_destinatario.Split(";")) _
+                                        .Where(Function(x) Not IsNullOrWhiteSpace(x)) _
+                                        .Select(Function(x) x.Trim).ToList
+
+            For Each strDest In lstDestinatarios
+                email.To.Add(strDest)
+            Next
+
+
+            ' Por defecto asigno siempre habilitar_SSL = True (ya que es ahora necesario y no quiero hacerlo dependiente del servidor, ya que puede cambiar el nombre del mismo)
+            ' Lo fuerso ya que es posible que alguna llamada de algún de las multiples aplicaciones o métodos no lo inicialice adecuadamente
+            habilitar_SSL = True
+
+            email.From = New System.Net.Mail.MailAddress(email_origen, nombre_origen)
+            email.ReplyTo = New System.Net.Mail.MailAddress(email_respuesta, nombre_respuesta)
+            email.Subject = GetString(asunto, 0, 100)
+            email.Body = cuerpo
+            email.IsBodyHtml = True
+            'Si me pasan la ruta de un archivo adjunto, se lo incorporo al email
+            If ruta_documento_adjunto IsNot Nothing Then
+                For Each strRuta_Documento_Adjunto In ruta_documento_adjunto
+                    If System.IO.File.Exists(strRuta_Documento_Adjunto) Then
+                        email.Attachments.Add(New System.Net.Mail.Attachment(strRuta_Documento_Adjunto))
+                    End If
+                Next
+            End If
+            'Añado la copia oculta si es necesario
+            If Not IsNullOrWhiteSpace(email_copia_oculta) Then
+                email.Bcc.Add(New System.Net.Mail.MailAddress(email_copia_oculta, nombre_respuesta))
+            End If
+
+            Dim client As New System.Net.Mail.SmtpClient
+            client.Credentials = New System.Net.NetworkCredential(usuario, password)
+            client.Port = puerto
+            client.Host = servidor
+            client.EnableSsl = habilitar_SSL
+            client.Send(email)
+            ret = True
+
+
+        Catch ex As Exception
+
+            ret = False
+
+        Finally
+
+            If email.Attachments IsNot Nothing Then
+                For Each att In email.Attachments
+                    att.Dispose()
+                Next
+                email.Attachments.Clear()
+                email.Attachments.Dispose()
+            End If
+
+            email.Dispose()
+            email = Nothing
+
+        End Try
+
+        Return ret
+
+    End Function

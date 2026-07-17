@@ -1,0 +1,9 @@
+# Reglas Base para Asistentes de IA (Cline)
+
+1. **Fuente de Verdad:** Lee SIEMPRE el archivo `context.md` ubicado en la raíz del proyecto antes de proponer cambios arquitectónicos o agregar nuevas funcionalidades.
+2. **Arquitectura Limpia:** Respeta las reglas de dependencia de Clean Architecture documentadas en `context.md`.
+3. **Restricción de Frontend:** Nunca agregues código C# o lógica de servidor en el proyecto `.Web`. Es estrictamente HTML/JS.
+4. **Restricción de Backend:** Nunca mezcles sentencias SQL dentro de los Controladores de la API. Todo el SQL debe ir en `RecordatorioEnvio.Infrastructure`.
+5. **Prompts:** Para tareas repetitivas o complejas, consulta o guarda las instrucciones en la carpeta `/prompts`.
+6. **Idioma:** Mantén los comentarios de código, la documentación técnica y las interacciones de chat en Español, a menos que el usuario indique lo contrario. Las variables y clases se nombran en inglés/español según el contexto existente.
+7. **Estilos y Diseño (CSS):** Al trabajar en el Frontend, es obligatorio respetar el sistema de diseño y las clases CSS existentes. No inventes estilos en línea ni rompas la consistencia visual (UX/UI) del proyecto original.

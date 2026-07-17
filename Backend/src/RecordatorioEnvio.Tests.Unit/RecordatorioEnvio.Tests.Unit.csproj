@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CCCCCCCC-DDDD-EEEE-FFFF-000000000001}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RecordatorioEnvio.Tests.Unit</RootNamespace>
+    <AssemblyName>RecordatorioEnvio.Tests.Unit</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <RunSettingsFilePath>
+    </RunSettingsFilePath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <!-- MSTest v2 — instalado via NuGet: clic derecho en solución → Restaurar paquetes NuGet -->
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework">
+      <HintPath>..\..\packages\MSTest.TestFramework.2.2.10\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions">
+      <HintPath>..\..\packages\MSTest.TestFramework.2.2.10\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <!-- Moq — librería para simular repositorios sin BD real -->
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.18.4\lib\net462\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core.5.1.1\lib\net462\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\RecordatorioControllerTests.cs" />
+    <Compile Include="Services\RecordatorioServiceTests.cs" />
+    <Compile Include="Services\ValidacionesServiceTests.cs" />
+    <Compile Include="Services\SecurityServiceTests.cs" />
+    <Compile Include="Services\RecordatorioMapperTests.cs" />
+    <Compile Include="Services\EmailTemplateBuilderTests.cs" />
+    <Compile Include="Services\EncryptionServiceTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RecordatorioEnvio.Domain\RecordatorioEnvio.Domain.csproj">
+      <Project>{11111111-2222-3333-4444-555555555555}</Project>
+      <Name>RecordatorioEnvio.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecordatorioEnvio.Application\RecordatorioEnvio.Application.csproj">
+      <Project>{33333333-4444-5555-6666-777777777777}</Project>
+      <Name>RecordatorioEnvio.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecordatorioEnvio.Infrastructure\RecordatorioEnvio.Infrastructure.csproj">
+      <Project>{55555555-6666-7777-8888-999999999999}</Project>
+      <Name>RecordatorioEnvio.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecordatorioEnvio.API\RecordatorioEnvio.API.csproj">
+      <Project>{22222222-3333-4444-5555-666666666666}</Project>
+      <Name>RecordatorioEnvio.API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- El adaptador MSTest permite que VS Test Explorer detecte y ejecute los tests -->
+  <!-- Se carga solo si el paquete está restaurado; si no, se ignora sin error -->
+  <Import Project="..\..\packages\MSTest.TestAdapter.2.2.10\build\net45\MSTest.TestAdapter.props" Condition="Exists('..\..\packages\MSTest.TestAdapter.2.2.10\build\net45\MSTest.TestAdapter.props')" />
+</Project>

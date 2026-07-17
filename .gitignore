@@ -1,0 +1,17 @@
+# .NET
+[Bb]in/
+[Oo]bj/
+.vs/
+TestResults/
+*.user
+
+# Node / React
+node_modules/
+dist/
+.npmrc
+.env*
+!.env.example
+
+# OS generated files
+.DS_Store
+Thumbs.db

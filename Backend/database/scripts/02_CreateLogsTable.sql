@@ -1,0 +1,31 @@
+-- =========================================================================
+-- SCRIPT DE CREACIÓN DE TABLA DE LOGS: RECORDATORIO_ENVIO_LOGS
+-- =========================================================================
+
+-- Borrar si existe (opcional)
+-- DROP TABLE GESAP.RECORDATORIO_ENVIO_LOGS;
+
+-- 1. Tabla de Logs (RECORDATORIO_ENVIO_LOGS en esquema GESAP)
+CREATE TABLE GESAP.RECORDATORIO_ENVIO_LOGS (
+    LOG_ID          NUMBER(19,0) NOT NULL,
+    LOG_DATE        DATE DEFAULT SYSDATE,
+    LOG_LEVEL       VARCHAR2(20) NOT NULL,
+    LOGGER          VARCHAR2(255),
+    MESSAGE         VARCHAR2(4000),
+    EXCEPTION_MSG   CLOB,
+    STACKTRACE      CLOB,
+    IP_ADDRESS      VARCHAR2(50),
+    ENDPOINT        VARCHAR2(255),
+    USER_NAME       VARCHAR2(100),
+    SQL_QUERY       CLOB,
+    CONSTRAINT PK_RECORDATORIO_ENVIO_LOGS PRIMARY KEY (LOG_ID)
+);
+
+-- 2. Índices para rendimiento
+CREATE INDEX GESAP.IDX_RE_LOGS_DATE ON GESAP.RECORDATORIO_ENVIO_LOGS(LOG_DATE);
+CREATE INDEX GESAP.IDX_RE_LOGS_LEVEL ON GESAP.RECORDATORIO_ENVIO_LOGS(LOG_LEVEL);
+
+-- 3. Comentarios
+COMMENT ON TABLE GESAP.RECORDATORIO_ENVIO_LOGS IS 'Tabla de logs avanzados para la API de Recordatorio de Envíos';
+COMMENT ON COLUMN GESAP.RECORDATORIO_ENVIO_LOGS.LOG_LEVEL IS 'Nivel del log: INFO, WARN, ERROR, FAULT';
+COMMENT ON COLUMN GESAP.RECORDATORIO_ENVIO_LOGS.SQL_QUERY IS 'Almacena la consulta SQL exacta causante del error o sospechosa';
