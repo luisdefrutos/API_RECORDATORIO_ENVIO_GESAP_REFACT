@@ -13,7 +13,8 @@
     "@material-symbols/svg-400": "^0.45.8",
     "@tuvsud/design-system": "^1.30.2",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
     "@types/node": "^24.13.2",

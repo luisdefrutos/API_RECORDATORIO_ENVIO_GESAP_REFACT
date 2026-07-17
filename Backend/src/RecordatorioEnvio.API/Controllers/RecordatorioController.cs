@@ -135,27 +135,15 @@ namespace RecordatorioEnvio.API.Controllers
 
         [HttpPost]
         [Route("")]
-        public async Task<IHttpActionResult> Post([FromBody] SecurePayload payload)
+        public async Task<IHttpActionResult> Post([FromBody] RecordatorioEnvioRespDto dto)
         {
-            if (payload == null || string.IsNullOrEmpty(payload.Data)) 
-                return BadRequest("Payload cifrado vacío");
+            if (dto == null) 
+                return BadRequest("Payload vacío o inválido");
 
-            RecordatorioEnvioRespDto dto;
             try
             {
-                // 1. Desencriptar Payload
-                var decryptedJson = _encryptionService.Decrypt(payload.Data);
-                if (string.IsNullOrEmpty(decryptedJson))
-                {
-                    LogHelper.Log("Fallo al desencriptar payload POST", "WARN", corrId: GetCorrId());
-                    return BadRequest("Datos corruptos o llave inválida");
-                }
-
-                // 2. Deserializar a DTO original
-                dto = JsonConvert.DeserializeObject<RecordatorioEnvioRespDto>(decryptedJson);
-                if (dto == null) return BadRequest("Formato JSON inválido tras desencriptación");
-
                 // --- PROTECCIÓN IDOR (TOKEN DE INMUTABILIDAD) ---
+                // Verifica que el ID que viene en el DTO es realmente el ID sobre el que el usuario tiene permisos
                 string inmutabilityTokenHeader = null;
                 if (Request.Headers.TryGetValues("X-Inmutability-Token", out var values))
                 {
@@ -177,7 +165,7 @@ namespace RecordatorioEnvio.API.Controllers
             }
             catch (Exception ex)
             {
-                LogHelper.Error(ex, "POST - Error Desencriptación/Deserialización", corrId: GetCorrId());
+                LogHelper.Error(ex, "POST - Error de Seguridad / Validación de IDOR", corrId: GetCorrId());
                 return SafeInternalServerError();
             }
 
